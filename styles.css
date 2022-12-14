@@ -1,0 +1,469 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection{
+    background: #0d598bab;
+    color: #fff;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    background-color: #ffffffca;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+}
+
+nav{
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    padding: 5px 15px;
+    gap: 20px;
+}
+
+nav > a > img{
+    width: 120px;
+}
+
+nav > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    text-align: center;
+    color: #8b0d35;
+}
+
+nav > ul > li > a{
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav > ul > li > a:hover{
+    opacity: .6;
+}
+
+/* main */
+main{
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider{
+    width: 100%;
+    height: 70vw;
+    max-height: 500px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow: auto hidden;
+    scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar{
+    height: 15px;
+}
+
+.slider::-webkit-scrollbar-thumb{
+    background: #890e3590;
+    border-radius: 10px;
+    border: 5px solid #fff;
+}
+
+
+.slider > img{
+    flex-shrink: 0;
+    object-position: center top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+}
+
+.content{
+    padding: 0 20px;
+}
+
+.content > *{
+    margin-top: 40px;
+}
+
+main > .content > h1,
+main > .content > h2{
+    color: #8b0d35;
+    text-shadow: 1px 1px 2px #00000055;
+}
+
+main > .content > h1{
+    text-align: center;
+}
+
+main > .content > figure > img{
+    width: 100%;
+    object-fit: contain;
+}
+
+main > .content > figure > figcaption{
+    font-style: italic;
+    color: #222222ac;
+    margin-top: 5px;
+}
+
+main > .content > figure > figcaption > a{
+    text-decoration: none;
+    color: #0066ff;
+}
+
+main > .content > p{
+    line-height: 30px;
+}
+
+main > .content > p > span:nth-child(1){
+    background: #8b0d35;
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+main > .content > p > span:nth-child(2){
+    background: #0a3492;
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+main > .content > table{
+    margin: 30px auto;
+    width: auto;
+    max-width: 500px;
+    box-shadow: 1px 1px 5px #22222258;
+    background: #fff;
+    border-collapse: collapse;
+    transition: all .3s;
+}
+
+main > .content > table:hover{
+    box-shadow: 1px 1px 10px #22222258;
+}
+
+main > .content > table img{
+    width: 50px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+main > .content > table td,
+main > .content > table th{
+    border: 1px solid #00000055;
+    padding: 5px;
+    text-align: center;
+}
+
+/* mapa link imagen */
+.content > img{
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+    margin: 50px 0;
+}
+
+
+
+/* teams */
+.teams{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px 10px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #b41346, #5f0a24);
+}
+
+.teams > .team{
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.teams > .team > figure > img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    transition: all .2s;
+    box-shadow: 1px 1px 5px #00000047;
+}
+
+.teams > .team > figure > img:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 12px #0000005a;
+}
+
+.teams > .team > figure > figcaption{
+    text-align: center;
+    padding: 3px;
+}
+
+/* group stage */
+.group-stage{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    padding: 50px 10px;
+    background: linear-gradient(to bottom, #b41346, #5f0a24);
+}
+
+.group-stage > .group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.group-stage > .group > h3{
+    color: #fff;
+}
+
+.group-stage > .group > .group__table{
+    flex-shrink: 0;
+    width: 100%;
+    overflow: auto hidden;
+}
+
+.group-stage > .group > .group__table table{
+    border-collapse: collapse;
+    width: 100%;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.group-stage > .group > .group__table table td,
+.group-stage > .group > .group__table table th{
+    border: .5px solid #ffffff48;
+    padding: 10px;
+    text-align: center;
+}
+
+.group-stage > .group > .group__table table > tr td:last-child{
+    width: 10px;
+}
+
+.group-stage > .group > .group__table table td > div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.group-stage > .group > .group__table table td > div > img{
+    width: 40px;
+    object-fit: contain;
+    box-shadow: 1px 1px 3.5px #00000049;
+}
+
+
+
+
+
+
+
+
+
+/* noticias */
+.news{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+.new{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #e9e9e9;
+}
+
+.new .new__img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new .new__img > img{
+    object-fit: contain;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.new .new__body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.new .new__body > button{
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    background: #f5f5f5;
+    color: #000;
+}
+
+.new .new__body > button:hover{
+    background: #8b0d35;
+    color: #fff;
+}
+
+.new .new__body > button:active{
+    background: #d8225c;
+    transform: scale(.97);
+}
+
+
+
+
+
+
+
+/* footer */
+footer{
+    width: 100%;
+    background: #8b0d35;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-weight: bold;
+    gap: 5px;
+}
+
+footer > img{
+    width: 100%;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+
+footer > marquee{
+    width: 100%;
+}
+
+footer > span{
+    width: 100%;
+    text-align: right;
+}
+
+
+@media screen and (max-width: 700px){
+    nav{
+        flex-direction: column;
+        padding: 5px 3px;
+        gap: 5px;
+    }
+    
+    nav > a > img{
+        width: 80px;
+    }
+    
+    nav > ul{
+        flex-shrink: 0;
+        width: 98%;
+        justify-content: space-between;
+        overflow: auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav > ul::-webkit-scrollbar{
+        height: 5px;
+    }
+
+    nav > ul::-webkit-scrollbar-thumb{
+        background: #890e3590;
+        border-radius: 10px;
+    }
+
+    nav > ul > li{
+        flex-shrink: 0;
+    }
+
+    /* noticias */
+    .news{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .new{
+        flex-direction: row;  /**/
+        justify-content: center; /**/
+    }
+
+    .new .new__img{
+        align-self: start;
+    }
+    
+    .new .new__body{
+        height: auto; /**/
+        align-self: stretch; /**/
+        justify-content: space-between; /**/
+        align-items: start;  /**/
+    }
+
+    .new .new__body > span{
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+    
+    .new .new__body > button{
+        transition: all 0s; /**/
+    }
+}
